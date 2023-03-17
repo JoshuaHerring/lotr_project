@@ -1,3 +1,5 @@
+
+
 // Testing the API
 
 const url = "https://lotr-api.onrender.com/characters";
@@ -15,13 +17,13 @@ async function updatePlace(url) {
         
 
         let elements = document.createElement('li');
-        let element = document.createElement('p');
+        let element = document.createElement('li');
 
         elements.innerHTML = name;
         element.innerHTML = race;
 
         place.appendChild(elements);
-        body.appendChild(element);
+        place.appendChild(element);
 
 
     }
@@ -33,3 +35,6 @@ updatePlace(url).then(result => {
 }).catch(error => {
     console.log(error);
 });
+
+
+
