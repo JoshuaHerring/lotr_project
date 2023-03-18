@@ -34,3 +34,27 @@ nav a{
 }
 
 /* header styling end /////////////////////////////////////////////////////////////////// */
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer stying start//////////////////////////////////////////////////////////////// */
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    background-color: #8E5132;
+    color: #DBB47D;
+}
+
+/* footer styling end /////////////////////////////////////////////////////////////////////// */
