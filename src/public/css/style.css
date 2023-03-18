@@ -6,3 +6,31 @@
     --greenColor: #98B04F;
 }
 
+/* Header styyling start ///////////////////////////////////////////////////////////////*/
+
+header{
+display: grid;
+grid-template-columns: 100px 1fr;
+background-color: #8E5132;
+}
+
+.logo{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+nav
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a{
+    font-size: 125%;
+    color: #DBB47D;
+    text-decoration: none;
+}
+
+/* header styling end /////////////////////////////////////////////////////////////////// */
