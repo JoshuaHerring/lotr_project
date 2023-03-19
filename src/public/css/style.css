@@ -41,7 +41,7 @@ nav a{
 
 /* Home Page Map Styling */
 #zoom-img{
-    background-image: url("mordor.jpeg");
+    background-image: url("https://github.com/JoshuaHerring/lotr_project/blob/master/src/public/images/mordor.jpeg?raw=true");
     background-position: center;
     background-size: cover;
     border: 3px solid black;
