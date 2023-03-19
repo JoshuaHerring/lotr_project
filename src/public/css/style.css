@@ -41,7 +41,7 @@ nav a{
 
 /* Home Page Map Styling */
 #zoom-img{
-    background-image: url("public/images/mordor.jpeg");
+    background-image: url("mordor.jpeg");
     background-position: center;
     background-size: cover;
     border: 3px solid black;
