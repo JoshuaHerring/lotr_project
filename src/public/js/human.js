@@ -2,16 +2,27 @@ const apiUrl = "https://lotr-api.onrender.com/characters";
 
 function render(data){
     const container = document.querySelector(".content");
-    console.log(data[1].name);
+
 
     // data.forEach(item => {
         // Create the elements for the template
-        const content = document.createElement("h1");
+        const content = document.createElement("h2");
+        const img = document.createElement("img");
+        const info = document.createElement("h3");
+        const race = document.createElement("h1")
 
         // Set the content for each element
         content.innerText = data[1].name;
+        img.src = "./public/images/aragon.jpg";
+        info.innerText = data[1].description;
+        race.innerText = data[1].race;
+
         // Append the elements to the container
+        container.appendChild(race);
+        container.appendChild(img);
         container.appendChild(content);
+        container.appendChild(info);
+        
         
     // });
 
