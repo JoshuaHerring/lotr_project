@@ -145,6 +145,10 @@ nav{
     box-shadow: 0px 4px 20px black;
 }
 
+.c-list{
+    margin-right: 12%;
+}
+
 .body-container{
     margin: 10px;
 }
