@@ -2,42 +2,65 @@
 
 // Testing the API
 
-const url = "https://lotr-api.onrender.com/characters";
-let place = document.querySelector("ul");
-let body = document.querySelector("body");
+// const url = "https://lotr-api.onrender.com/characters";
+// let place = document.querySelector("ul");
+// let body = document.querySelector("body");
 
-async function updatePlace(url) {
-    const res = await fetch(url);
+// async function updatePlace(url) {
+//     const res = await fetch(url);
 
-    let data = await res.json();
-    console.log(data);
-    for(let i = 0; i < data.length; i++){
-        let name = data[i].name;
-        let race = data[i].race;
+//     let data = await res.json();
+//     console.log(data);
+//     for(let i = 0; i < data.length; i++){
+//         let name = data[i].name;
+//         let race = data[i].race;
         
 
-        let elements = document.createElement('li');
-        let element = document.createElement('li');
+//         let elements = document.createElement('li');
+//         let element = document.createElement('li');
 
-        elements.innerHTML = name;
-        element.innerHTML = race;
+//         elements.innerHTML = name;
+//         element.innerHTML = race;
 
-        place.appendChild(elements);
-        place.appendChild(element);
+//         place.appendChild(elements);
+//         place.appendChild(element);
 
 
-    }
-    return place;
+//     }
+//     return place;
+// }
+
+// updatePlace(url).then(result => {
+//     console.log(result);
+// }).catch(error => {
+//     console.log(error);
+// });
+
+
+// hamburger menu //
+
+function openHammy(){
+    const close = document.getElementById("gone");
+    close.addEventListener("click", checkForHammy(close))
 }
 
-updatePlace(url).then(result => {
-    console.log(result);
-}).catch(error => {
-    console.log(error);
-});
+function checkForHammy(close){    
+    let nav = document.querySelector("nav");
+    if(nav.classList.contains("hammy")){
+        nav.classList.remove("hammy");
+        close.innerHTML = "&#x2630;";
+    }else{
+        nav.classList.add("hammy");
+        close.innerHTML = "&#10005;";
+    }
+
+}
 
 
-// Zoom for the Map
+
+
+
+// Zoom for the Map //
 window.addEventListener("load", function() {
     let container = document.getElementById("zoom-img");
 
@@ -86,3 +109,54 @@ window.addEventListener("load", function() {
 })
 // end of zoom for the map
 
+
+// Map Information Dropdown
+
+let locationURL = "https://lotr-api.onrender.com/locations";
+const dropDownContent = document.getElementById("dropdown-content");
+const locationInformation  = document.getElementById("location-info");
+
+
+async function getLocations(url){
+    let response  = await fetch(url);
+    let mapSpots = await response.json();
+    console.log(mapSpots);
+    return mapSpots;
+}
+
+async function displayLocations(){
+    try{
+        let data =  await getLocations(locationURL);
+        console.log(data); 
+        data.forEach(location => {
+            let stringName = JSON.stringify(location.name).replace(/"/g,'');
+            let nameNoSpace = stringName.replace(/\s/g, '' );
+            let namePlace = document.createElement("a");            
+
+            namePlace.innerHTML = stringName;
+            namePlace.classList = nameNoSpace;
+
+            dropDownContent.appendChild(namePlace);
+
+            namePlace.addEventListener("click", function (){
+                displayLocationInfo(location, location.name)
+            });
+        });
+        
+
+    } catch(error){
+        alert(error);
+    }
+}
+
+
+async function displayLocationInfo(data, id){
+    if(data.name == id){
+        locationInformation.innerHTML = 
+        `Name: ${data.name} \n
+        Description: ${data.description}`;
+        locationInformation.style.display = "block";
+    }
+}
+
+displayLocations()

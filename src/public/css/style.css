@@ -1,3 +1,8 @@
+
+
+
+/* Small View */
+
 :root {
     --primaryColor: #E6B855;
     --secondaryColor: #D3873B;
@@ -12,6 +17,7 @@ header{
 display: grid;
 grid-template-columns: 100px 1fr;
 background-color: #8E5132;
+padding: 10px;
 }
 
 .logo{
@@ -21,12 +27,6 @@ background-color: #8E5132;
     margin: auto;
 }
 
-nav
-{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
 
 nav a{
     font-size: 125%;
@@ -48,11 +48,113 @@ nav a{
     background-repeat: no-repeat;
 
 }
-#contain{
-    height: 600px;
-    width: 800px;
+#contain {
+    height: 100%;
+    width: 100%;
 }
+
 /* */
+
+
+
+/* Hamburger Menu Styles */
+
+nav{
+    display: none;
+}
+
+.hammy{
+    grid-column: 1/3;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+
+}
+.hammy a {
+    display: block;
+    margin: 15px;
+}
+
+#gone{
+    display: block;
+    margin-left: 80%;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 40px;
+}
+
+#gone:hover{
+    cursor: pointer;
+}
+
+/*  */
+
+/* Dropdown Menu */
+
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    }
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+#dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+#dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Links inside the dropdown */
+#dropdown-content a {
+    display: block;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    background-color: white;
+}
+
+.dropdown:hover #dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+#location-info{
+    display: none;
+}
+/*  */
+
+
+/* Body General Styles */
+.c-list img{
+    width: 70%;
+    height: 70%;
+    box-shadow: 0px 4px 20px black;
+}
+
+.body-container{
+    margin: 10px;
+}
+
+body{
+    background-color: rgb(18,18,18);
+    color: white;
+}
+
+/*  */
 
 
 
@@ -70,3 +172,35 @@ footer{
 }
 
 /* footer styling end /////////////////////////////////////////////////////////////////////// */
+
+
+
+
+/* Medium View */
+@media screen and (min-width: 600px){
+    body{
+        background-color: burlywood;
+    }
+
+    nav{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #gone{
+        display: none;
+    }
+
+    .c-list img{
+        width: 200px;
+        height: auto;
+    }
+
+    #contain {
+        height: 70%;
+        width: 70%;
+    }
+
+
+}

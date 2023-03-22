@@ -8,50 +8,64 @@
     <link rel="stylesheet" href="./public/css/style.css">
     <script defer src="./public/js/global.js"></script>
     <script defer src="./public/js/index.js"></script>
+    
 
   </head>
   <body>
     <header id="parentHeader"></header>
-    <h1>LOTR Interactive Map</h1>
+    <div class="body-container">
+      <h1>LOTR Interactive Map</h1>
 
-    <!-- map -->
-    <div id="contain">
-      <div id="zoom-img"></div>
-    </div>  
+      <!-- map -->
+      <div id="contain">
+        <div id="zoom-img"></div>
+      </div>  
 
-    <!-- testing API -->
-    <ul></ul>
-    <section class="character">
-      <ul class="character-list">
-        <a
-          class="c-list"
-          href=""
-          ><img
-            src="./public/images/aragon.jpg"
-            alt="Human Race"
-        /></a>
-        <a
-          class="c-list"
-          href=""
-          ><img
-            src="./public/images/frodo.jpg"
-            alt="Hobbit Race"
-        /></a>
-        <a
-          class="c-list"
-          href=""
-          ><img
-            src="./public/images/legolas.jpg"
-            alt="Elf Race"
-        /></a>
-        <a class="c-list" 
-          href=""
-          ><img
-            src="./public/images/gandalf.jpg"
-            alt="Wizzzzzards"
-        /></a>
-      </ul>
-    </section>
+      <!-- testing API -->
+      <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div id="dropdown-content">
+          
+        </div>
+      </div>
+
+      <section id="location-info">
+        
+      </section>
+
+
+      <section class="character">
+        <ul class="character-list">
+          <a
+            class="c-list"
+            href=""
+            ><img
+              src="./public/images/aragon.jpg"
+              alt="Human Race"
+          /></a>
+          <a
+            class="c-list"
+            href=""
+            ><img
+              src="./public/images/frodo.jpg"
+              alt="Hobbit Race"
+          /></a>
+          <a
+            class="c-list"
+            href=""
+            ><img
+              src="./public/images/legolas.jpg"
+              alt="Elf Race"
+          /></a>
+          <a class="c-list" 
+            href=""
+            ><img
+              src="./public/images/gandalf.jpg"
+              alt="Wizzzzzards"
+          /></a>
+        </ul>
+      </section>
+    </div>
     <footer id="parentFooter"></footer>
   </body>
 </html>
