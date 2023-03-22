@@ -131,6 +131,10 @@ nav{
 }
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+#location-info{
+    display: none;
+}
 /*  */
 
 
@@ -155,6 +159,7 @@ body{
 
 
 
+
 /* Footer stying start//////////////////////////////////////////////////////////////// */
 
 footer{
@@ -174,7 +179,7 @@ footer{
 /* Medium View */
 @media screen and (min-width: 600px){
     body{
-        background-color: blue;
+        background-color: burlywood;
     }
 
     nav{
@@ -186,5 +191,16 @@ footer{
     #gone{
         display: none;
     }
+
+    .c-list img{
+        width: 200px;
+        height: auto;
+    }
+
+    #contain {
+        height: 70%;
+        width: 70%;
+    }
+
 
 }

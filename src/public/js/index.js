@@ -110,11 +110,12 @@ window.addEventListener("load", function() {
 // end of zoom for the map
 
 
-// Map Information
+// Map Information Dropdown
 
 let locationURL = "https://lotr-api.onrender.com/locations";
 const dropDownContent = document.getElementById("dropdown-content");
-console.log(dropDownContent)
+const locationInformation  = document.getElementById("location-info");
+
 
 async function getLocations(url){
     let response  = await fetch(url);
@@ -128,17 +129,33 @@ async function displayLocations(){
         let data =  await getLocations(locationURL);
         console.log(data); 
         data.forEach(location => {
-            let jName = JSON.stringify(location.name);
-            let namePlace = document.createElement("a");
+            let stringName = JSON.stringify(location.name).replace(/"/g,'');
+            let nameNoSpace = stringName.replace(/\s/g, '' );
+            let namePlace = document.createElement("a");            
 
-            namePlace.innerHTML = jName;
-            dropDownContent.appendChild(namePlace)
+            namePlace.innerHTML = stringName;
+            namePlace.classList = nameNoSpace;
 
+            dropDownContent.appendChild(namePlace);
+
+            namePlace.addEventListener("click", function (){
+                displayLocationInfo(location, location.name)
+            });
         });
         
 
     } catch(error){
         alert(error);
+    }
+}
+
+
+async function displayLocationInfo(data, id){
+    if(data.name == id){
+        locationInformation.innerHTML = 
+        `Name: ${data.name} \n
+        Description: ${data.description}`;
+        locationInformation.style.display = "block";
     }
 }
 
