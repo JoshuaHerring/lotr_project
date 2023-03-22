@@ -12,10 +12,10 @@ function render(data){
         const race = document.createElement("h1")
 
         // Set the content for each element
-        content.innerText = data[4].name;
-        img.src = "./public/images/gimli.jpg";
-        info.innerText = data[4].description;
-        race.innerText = data[4].race;
+        content.innerText = data[2].name;
+        img.src = "./public/images/gandalf.jpg";
+        info.innerText = data[2].description;
+        race.innerText = data[2].race;
 
         // Append the elements to the container
         container.appendChild(race);
