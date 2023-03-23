@@ -1,7 +1,18 @@
+/* paragraph font */
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&display=swap');
+/* font-family: 'Gothic A1', sans-serif; */
+
+/* backup header */
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+/* font-family: 'MedievalSharp', cursive; */
 
 
-
-/* Small View */
+/* header font */
+@font-face {
+    font-family: ringbearer;
+    src: url("./ringbearermedium-51mgz.ttf");
+    font-weight: 800;
+}
 
 :root {
     --primaryColor: #E6B855;
@@ -11,13 +22,29 @@
     --greenColor: #98B04F;
 }
 
+/* Small View */
+
+
 /* Header styyling start ///////////////////////////////////////////////////////////////*/
 
+#title{
+    font-family: ringbearer, 'MedievalSharp', cursive;
+    letter-spacing: 3.4px;
+    word-spacing: 2px;
+    font-size: 40px;
+    text-align: center;
+    margin: 40px 0 40px 0;
+    text-shadow: 0px 0px 10px #E6B855;
+    -webkit-text-stroke: 0.02em black;
+}
+
 header{
-display: grid;
-grid-template-columns: 100px 1fr;
-background-color: #8E5132;
-padding: 10px;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    background-color: none;
+    padding: 10px;
+    
+
 }
 
 .logo{
@@ -32,6 +59,7 @@ nav a{
     font-size: 125%;
     color: #DBB47D;
     text-decoration: none;
+    
 }
 
 /* header styling end /////////////////////////////////////////////////////////////////// */
@@ -44,8 +72,10 @@ nav a{
     background-image: url("https://github.com/JoshuaHerring/lotr_project/blob/master/src/public/images/mordor.jpeg?raw=true");
     background-position: center;
     background-size: cover;
-    border: 3px solid black;
+    /* border: 2px solid black; */
     background-repeat: no-repeat;
+    box-shadow: 0px 4px 20px black;
+    border-radius: 10px;
 
 }
 #contain {
@@ -75,6 +105,12 @@ nav{
 .hammy a {
     display: block;
     margin: 15px;
+    font-weight: 10000;
+}
+
+.hammy a:hover{
+    text-decoration: underline;
+    
 }
 
 #gone{
@@ -94,27 +130,39 @@ nav{
 /* Dropdown Menu */
 
 .dropbtn {
-    background-color: #04AA6D;
+    background-color: #B19068;
     color: white;
     padding: 16px;
-    font-size: 16px;
-    border: none;
+    font-size: 20px;
+    border: 0.1px solid black;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow:0px 4px 20px black;
+    font-family: ringbearer, 'MedievalSharp', cursive;
+    letter-spacing: 1.4px;
+    -webkit-text-stroke: 0.25px black;
+    text-shadow: 2px 2px 5px black;
     }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
-    position: relative;
-    display: inline-block;
+    margin-top: 20px;
 }
 
 /* Dropdown Content (Hidden by Default) */
 #dropdown-content {
     display: none;
     position: absolute;
+    width: 90%;
     z-index: 1;
+    text-align: center;
+    /* border: 1px solid black; */
 }
 #dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: #B19068;
+    opacity: 1;
+    border: 1px solid black;
+    font-weight: bold;
 }
 
 /* Links inside the dropdown */
@@ -123,18 +171,36 @@ nav{
     color: black;
     padding: 12px 16px;
     text-decoration: none;
-    background-color: white;
+    background-color: #DBB47D;
+    opacity: 0.6;
+    font-family: 'Gothic A1', sans-serif;
+    margin: 0 auto;
+    width: 70%;
 }
+
+#dropdown-content a:nth-child(1){
+    margin-top: 10px;
+}
+
 
 .dropdown:hover #dropdown-content {
     display: block;
 }
 
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover .dropbtn {
+    background-color: #E1AD7A;
+}
 
 #location-info{
     display: none;
 }
+
+#location-info h2{
+    text-align: center;
+    margin: 40px;
+}
+
+
 /*  */
 
 
@@ -143,10 +209,7 @@ nav{
     width: 70%;
     height: 70%;
     box-shadow: 0px 4px 20px black;
-}
-
-.c-list{
-    margin-right: 12%;
+    border-radius: 10px;
 }
 
 .body-container{
@@ -156,6 +219,11 @@ nav{
 body{
     background-color: rgb(18,18,18);
     color: white;
+    background-image: url("../images/background.jpeg");
+}
+
+body p, body a{
+    font-family: 'Gothic A1', sans-serif;
 }
 
 /*  */
