@@ -261,8 +261,8 @@ footer{
     justify-content: space-around;
     align-items: center;
     height: 50px;
-    background-color: #8E5132;
-    color: #DBB47D;
+    /* background-color: #8E5132; */
+    color: black;
 }
 
 /* footer styling end /////////////////////////////////////////////////////////////////////// */
