@@ -72,11 +72,19 @@ window.addEventListener("load", function() {
 // end of zoom for the map
 
 
+
+
+
+
+
+
+
 // Map Information Dropdown
 
 let locationURL = "https://lotr-api.onrender.com/locations";
 const dropDownContent = document.getElementById("dropdown-content");
 const locationInformation  = document.getElementById("location-info");
+
 
 
 async function getLocations(url){
@@ -89,7 +97,10 @@ async function getLocations(url){
 async function displayLocations(){
     try{
         let data =  await getLocations(locationURL);
-        console.log(data); 
+        console.log(data);
+
+        // initally display some location info
+        displayLocationInfo(data[0], data[0].name); 
         data.forEach(location => {
             let stringName = JSON.stringify(location.name).replace(/"/g,'');
             let nameNoSpace = stringName.replace(/\s/g, '' );
@@ -99,6 +110,7 @@ async function displayLocations(){
             namePlace.classList = nameNoSpace;
 
             dropDownContent.appendChild(namePlace);
+
 
             namePlace.addEventListener("click", function (){
                 displayLocationInfo(location, location.name)
@@ -122,3 +134,10 @@ async function displayLocationInfo(data, id){
 }
 
 displayLocations()
+
+
+
+
+
+
+//JS for Carousel
