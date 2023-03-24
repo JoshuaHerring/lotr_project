@@ -14,63 +14,51 @@
   <body>
     <header id="parentHeader"></header>
     <div class="body-container">
-      <h1>LOTR Interactive Map</h1>
+      <h1 id="title">LOTR Interactive Map</h1>
 
       <!-- map -->
-      <div id="contain">
-        <div id="zoom-img"></div>
-      </div>  
-
-      <!-- testing API -->
-      <div class="dropdown">
-        <button class="dropbtn">Dropdown</button>
-        <div id="dropdown-content">
-          
+      <div id="big-organize">
+        <div id="move">
+          <div id="contain">
+            <div id="zoom-img"></div>
+          </div> 
         </div>
-      </div>
-
-      <section id="location-info">
         
-      </section>
 
+        <!-- testing API -->
+        <div class="dropdown">
+          <button class="dropbtn">Locations</button>
+          <div id="center-drpdn">
+            <div id="dropdown-content">
+              
+            </div>
+          </div>
+        </div>
+
+        <section id="location-info">
+        </section>
+        <!-- <p>Click on the Locations button to get information on different places in the Lord of the Rings world.</p> -->
+      </div>
 
       <section class="character">
         <ul class="character-list">
-          <a
-            class="c-list"
-            href="./character.html"
-            ><img
-              src="./public/images/human.png"
-              alt="Human Race"
-          /></a>
-          <a
-            class="c-list"
-            href="./character.html"
-            ><img
+          <a class="c-list" href="./character.html?race=Human">
+            <img src="./public/images/human.png" alt="Human Race"/>
+          </a>
+          <a class="c-list" href="./character.html./character.html?race=Hobbit">
+            <img
               src="./public/images/hobbit.png"
               alt="Hobbit Race"
           /></a>
           <a
             class="c-list"
-            href="./character.html"
+            href=""
             ><img
               src="./public/images/elf.png"
               alt="Elf Race"
           /></a>
           <a class="c-list" 
-            href="./character.html"
-            ><img
-              src="./public/images/gimli.jpg"
-              alt="dwarf Race"
-          /></a>
-          <a class="c-list" 
-            href="./character.html"
-            ><img
-              src="./public/images/wizard.jpg"
-              alt="Wizard Race"
-          /></a>
-          <a class="c-list" 
-            href="./character.html"
+            href=""
             ><img
               src="./public/images/orc.png"
               alt="Orc Race"

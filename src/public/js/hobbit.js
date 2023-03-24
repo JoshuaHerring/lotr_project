@@ -1,36 +1,39 @@
-const apiUrl = "https://lotr-api.onrender.com/characters";
-
-function render(data){
-    const container = document.querySelector(".content");
-
-
-    // data.forEach(item => {
-        // Create the elements for the template
-        const content = document.createElement("h2");
-        const img = document.createElement("img");
-        const info = document.createElement("h3");
-        const race = document.createElement("h1")
-
-        // Set the content for each element
-        content.innerText = data[0].name;
-        img.src = "./public/images/frodo.jpg";
-        info.innerText = data[0].description;
-        race.innerText = data[0].race;
-
-        // Append the elements to the container
-        container.appendChild(race);
-        container.appendChild(img);
-        container.appendChild(content);
-        container.appendChild(info);
-        
-        
-    // });
-
+function getRace(param) {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const race = urlParams.get(param);
+    return race;
 }
 
-// Fetch data from the API and call the render function with it
+let race = getRace("race");
+console.log(typeof(race))
 
-fetch(apiUrl)
-	.then(response => response.json())
-	.then(data => render(data))
-	.catch(error => console.error(error));
+
+
+async function getLocations(url){
+    let response  = await fetch(url);
+    let characters = await response.json();
+    console.log(characters);
+    return characters;
+}
+
+
+async function showCharactersByRace(race) {
+    let characterURL = "https://lotr-api.onrender.com/characters";
+    const characterList = await getLocations(characterURL);
+    console.log(characterList)
+
+    characterList.forEach(character => {
+        // let races = JSON.stringify(character)
+        // console.log(character.race)
+        console.log(race)
+        if(JSON.stringify(character.race) === race){
+            console.log("hi")
+            // console.log(character);
+        }
+    });
+}
+
+showCharactersByRace(race);
+
+

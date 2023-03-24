@@ -1,42 +1,4 @@
 
-
-// Testing the API
-
-// const url = "https://lotr-api.onrender.com/characters";
-// let place = document.querySelector("ul");
-// let body = document.querySelector("body");
-
-// async function updatePlace(url) {
-//     const res = await fetch(url);
-
-//     let data = await res.json();
-//     console.log(data);
-//     for(let i = 0; i < data.length; i++){
-//         let name = data[i].name;
-//         let race = data[i].race;
-        
-
-//         let elements = document.createElement('li');
-//         let element = document.createElement('li');
-
-//         elements.innerHTML = name;
-//         element.innerHTML = race;
-
-//         place.appendChild(elements);
-//         place.appendChild(element);
-
-
-//     }
-//     return place;
-// }
-
-// updatePlace(url).then(result => {
-//     console.log(result);
-// }).catch(error => {
-//     console.log(error);
-// });
-
-
 // hamburger menu //
 
 function openHammy(){
@@ -110,11 +72,19 @@ window.addEventListener("load", function() {
 // end of zoom for the map
 
 
+
+
+
+
+
+
+
 // Map Information Dropdown
 
 let locationURL = "https://lotr-api.onrender.com/locations";
 const dropDownContent = document.getElementById("dropdown-content");
 const locationInformation  = document.getElementById("location-info");
+
 
 
 async function getLocations(url){
@@ -127,7 +97,10 @@ async function getLocations(url){
 async function displayLocations(){
     try{
         let data =  await getLocations(locationURL);
-        console.log(data); 
+        console.log(data);
+
+        // initally display some location info
+        displayLocationInfo(data[0], data[0].name); 
         data.forEach(location => {
             let stringName = JSON.stringify(location.name).replace(/"/g,'');
             let nameNoSpace = stringName.replace(/\s/g, '' );
@@ -137,6 +110,7 @@ async function displayLocations(){
             namePlace.classList = nameNoSpace;
 
             dropDownContent.appendChild(namePlace);
+
 
             namePlace.addEventListener("click", function (){
                 displayLocationInfo(location, location.name)
@@ -153,10 +127,17 @@ async function displayLocations(){
 async function displayLocationInfo(data, id){
     if(data.name == id){
         locationInformation.innerHTML = 
-        `Name: ${data.name} \n
-        Description: ${data.description}`;
+        `<h2>${data.name}</h2> \n
+        <p>${data.description}</p>`;
         locationInformation.style.display = "block";
     }
 }
 
 displayLocations()
+
+
+
+
+
+
+//JS for Carousel
