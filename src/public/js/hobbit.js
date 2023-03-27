@@ -24,12 +24,13 @@ async function showCharactersByRace(race) {
     console.log(characterList)
 
     characterList.forEach(character => {
-        // let races = JSON.stringify(character)
-        // console.log(character.race)
-        console.log(race)
-        if(JSON.stringify(character.race) === race){
-            console.log("hi")
-            // console.log(character);
+        let stringRace = JSON.stringify(character.race).replace(/"/g,'');
+        let cutRace = stringRace.split(' ')[0];
+
+        if(cutRace == race){
+            console.log(character.name)
+            const add = document.getElementById('add');
+            add.innerHTML = character.name;
         }
     });
 }

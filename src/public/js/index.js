@@ -90,14 +90,12 @@ const locationInformation  = document.getElementById("location-info");
 async function getLocations(url){
     let response  = await fetch(url);
     let mapSpots = await response.json();
-    console.log(mapSpots);
     return mapSpots;
 }
 
 async function displayLocations(){
     try{
         let data =  await getLocations(locationURL);
-        console.log(data);
 
         // initally display some location info
         displayLocationInfo(data[0], data[0].name); 
@@ -119,7 +117,7 @@ async function displayLocations(){
         
 
     } catch(error){
-        alert(error);
+        console.log(error);
     }
 }
 

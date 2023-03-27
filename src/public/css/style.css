@@ -44,7 +44,7 @@ header{
     background-color: none;
     padding: 10px;
     
-
+    
 }
 
 .logo{
@@ -57,9 +57,9 @@ header{
 
 nav a{
     font-size: 125%;
-    color: #DBB47D;
+    /* color: #DBB47D; */
+    color: #E9D1AF;
     text-decoration: none;
-    
 }
 
 /* header styling end /////////////////////////////////////////////////////////////////// */
@@ -225,11 +225,41 @@ header a:hover{
 
 
 /* Body General Styles */
+#charRaces{
+    color: white;
+    padding: 16px;
+    font-size: 20px;
+    border-radius: 10px;
+    font-family: ringbearer, 'MedievalSharp', cursive;
+    letter-spacing: 1.4px;
+    -webkit-text-stroke: 0.02em black;
+    text-shadow: 2px 2px 5px black;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 38px;
+}
+
+.character-list{
+    padding: 0;
+}
+.character-list a{
+    margin: 0 auto;
+}
+
 .c-list img{
     width: 70%;
     height: 70%;
     box-shadow: 0px 4px 20px black;
-    border-radius: 0px;
+    border-radius: 10px;
+    margin: 10px;
+    transition: all 0.75s ease-in;
+
+}
+
+.c-list img:hover{
+    box-shadow: 0px 4px 20px #E6B855;
+    transform: scale(1.1);
+    transition: all 0.5s ease-out;
 }
 
 .body-container{
