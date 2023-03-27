@@ -288,8 +288,10 @@ ul li{
 
 body{  
     font-family: Calibri, Helvetica, sans-serif;  
-    background-color: pink;  
+    background-color: pink; 
+    padding-left: 5%; 
   }
+        
 
   form{
     font-size: 20px;
@@ -389,6 +391,7 @@ footer{
         width: 90%;
         margin: 0 auto;
     }
+
 
     .dropdown{
         width: 500px;
