@@ -33,7 +33,8 @@ async function showRaceSecrets(race){
             const secretPlacement = document.getElementById('secrets');
             const shh = document.createElement('div');
 
-            shh.innerHTML = `<h2>${secrets.title}</h2>
+            shh.innerHTML = `<h3>${secrets.title}</h3
+            >
             <p>${secrets.description}</p>
             `;
 
