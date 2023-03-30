@@ -1,3 +1,5 @@
+
+
 /* paragraph font */
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&display=swap');
 /* font-family: 'Gothic A1', sans-serif; */
@@ -218,6 +220,7 @@ header a:hover{
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 2.4px;
+    margin-top: 20px;
 }
 
 #location-info p{
@@ -247,6 +250,13 @@ header a:hover{
     text-align: center;
     margin: 0 auto;
     font-size: 38px;
+}
+
+#leaf1{
+    display:none;
+}
+#leaf2{
+    display:none;
 }
 
 .character-list{
@@ -297,9 +307,10 @@ ul li{
 
 /* Sign-Up Page */
 
-body{  
+#sign{  
     font-family: Calibri, Helvetica, sans-serif;  
     background-color: pink; 
+    padding: 5%;
   }
         
 
@@ -332,10 +343,8 @@ body{
     outline: none; 
   } 
 
-  
-   div {  
-    padding: 10px 0;  
-    } 
+
+
 
   hr {  
     border: 1px solid #f1f1f1;  
@@ -449,7 +458,7 @@ footer{
 
     .character-list{
         width: 80%;
-        margin: 0 auto;
+        margin: auto;
     }
 }
 
@@ -457,6 +466,7 @@ footer{
 
     #title{
         font-size: 54px;
+        margin: 40px;
     }
 
     #big-organize{
@@ -483,6 +493,24 @@ footer{
         margin-top: 0px;
         grid-column: 2;
         grid-row: 1;
+    }
+
+    #large-title-grid{
+        display: flex;
+        align-items: center;
+        margin-bottom: 35px;
+    }
+
+    #leaf1{
+
+        display:block;
+        width: 45%;
+    }
+    #leaf2{
+        
+        display:block;
+        transform: scaleX(-1);
+        width: 45%;
     }
 
     #location-info{
