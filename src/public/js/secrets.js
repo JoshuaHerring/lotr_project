@@ -5,25 +5,18 @@ form.addEventListener('submit', async (event) => {
 
   const formData = new FormData(form);
 
-  const data = {
-    title: formData.get('title'),
-    race: formData.get('race'),
-    description: formData.get('description')
-  };
+  const data = new URLSearchParams(formData);
 
-  const body = JSON.stringify(data);
-  console.log("body :" + body);
   
   const response = await fetch(form.action, {
       method: 'POST',
-      // headers: {
-          //     'Content-Type': 'application/json'
-          //   },
-          body: formData
+          body: data
         });
-
-        console.log("response : " + response);
-    
-
-  // Handle the API response here
+        if(response.status = 201)
+        {
+          console.log("good job")
+        }
+        else{
+          console.log("unkwon error")
+        }
 });
