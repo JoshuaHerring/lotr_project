@@ -15,6 +15,7 @@ form.addEventListener('submit', async (event) => {
         if(response.status = 201)
         {
           console.log("good job")
+          form.reset();
         }
         else{
           console.log("unkwon error")
